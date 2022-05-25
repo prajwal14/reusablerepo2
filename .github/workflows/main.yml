@@ -28,7 +28,7 @@ jobs:
     steps:
 
     - name: Run a one-line script
-      run: echo Hello, world! {{ input.serviceName }}
+      run: echo Hello, world! ${{ input.serviceName }}
         
     - name: Build Output
       id: build-image
