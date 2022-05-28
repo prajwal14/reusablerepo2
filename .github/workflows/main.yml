@@ -37,4 +37,4 @@ jobs:
       id: build-image
       env:
         IMAGE_TAG: ThisIsJobOutput
-      run: echo "::set-output name=imageName::$IMAGE_TAG"
+      run: echo "::set-output name=imageName::${{ inputs.serviceName }}/$IMAGE_TAG"
