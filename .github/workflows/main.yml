@@ -18,6 +18,9 @@ on:
       PATTOKEN:
         required: true
 
+env:
+  xyz: hello
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -37,4 +40,4 @@ jobs:
       id: build-image
       env:
         IMAGE_TAG: ThisIsJobOutput
-      run: echo "::set-output name=imageName::${{ inputs.serviceName }}/$IMAGE_TAG"
+      run: echo "::set-output name=imageName::${{ env.xyz }}/${{ inputs.serviceName }}:$IMAGE_TAG"
